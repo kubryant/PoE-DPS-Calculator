@@ -1,0 +1,55 @@
+﻿<Window x:Class="DPS_Calculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:DPS_Calculator"
+        Title="DPS Calculator" Height="420" Width="270"
+        WindowStyle="ToolWindow">
+    
+    <Window.DataContext>
+        <local:DPSViewModel/>
+    </Window.DataContext>
+
+    <Grid>
+        <TextBlock Text="Physical Damage:" Margin="10,18,0,0" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox x:Name="LPDPS" Height="23" Margin="120,14,0,0" TextWrapping="Wrap" Text="{Binding LPDPS}" HorizontalContentAlignment="Left" HorizontalAlignment="Left" VerticalAlignment="Top" Width="53"/>
+        <TextBox x:Name="HPDPS" Height="23" Margin="190,14,0,0" TextWrapping="Wrap" Text="{Binding HPDPS}" HorizontalContentAlignment="Left" HorizontalAlignment="Left" VerticalAlignment="Top" Width="53"/>
+
+        <TextBlock Text="Fire Damage:" Margin="10,48,0,0" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox x:Name="LFDPS" Height="23" Margin="120,44,0,0" TextWrapping="Wrap" Text="{Binding LFDPS}" HorizontalContentAlignment="Left" HorizontalAlignment="Left" VerticalAlignment="Top" Width="53"/>
+        <TextBox x:Name="HFDPS" Height="23" Margin="190,44,0,0" TextWrapping="Wrap" Text="{Binding HFDPS}" HorizontalContentAlignment="Left" HorizontalAlignment="Left" VerticalAlignment="Top" Width="53"/>
+
+        <TextBlock Text="Cold Damage:" Margin="10,78,0,0" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox x:Name="LCDPS" Height="23" Margin="120,74,0,0" TextWrapping="Wrap" Text="{Binding LCDPS}" HorizontalContentAlignment="Left" HorizontalAlignment="Left" VerticalAlignment="Top" Width="53"/>
+        <TextBox x:Name="HCDPS" Height="23" Margin="190,74,0,0" TextWrapping="Wrap" Text="{Binding HCDPS}" HorizontalContentAlignment="Left" HorizontalAlignment="Left" VerticalAlignment="Top" Width="53"/>
+
+        <TextBlock Text="Lightning Damage:" Margin="10,108,0,0" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox x:Name="LLDPS" Height="23" Margin="120,104,0,0" TextWrapping="Wrap" Text="{Binding LLDPS}" HorizontalContentAlignment="Left" HorizontalAlignment="Left" VerticalAlignment="Top" Width="53"/>
+        <TextBox x:Name="HLDPS" Height="23" Margin="190,104,0,0" TextWrapping="Wrap" Text="{Binding HLDPS}" HorizontalContentAlignment="Left" HorizontalAlignment="Left" VerticalAlignment="Top" Width="53"/>
+
+        <TextBlock Text="Attack Speed:" Margin="10,138,0,0" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox x:Name="ASPD" Height="23" Margin="120,134,0,0" TextWrapping="Wrap" Text="{Binding ATSPD}" HorizontalContentAlignment="Left" HorizontalAlignment="Left" VerticalAlignment="Top" Width="53"/>
+
+        <TextBlock Text="Quality:" Margin="10,168,0,0" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox x:Name="Qual" Height="23" Margin="120,164,0,0" TextWrapping="Wrap" Text="{Binding Qual}" HorizontalContentAlignment="Left" HorizontalAlignment="Left" VerticalAlignment="Top" Width="53"/>
+
+        <TextBlock Text="IPD (%):" Margin="10,198,0,0" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox x:Name="IPD" Height="23" Margin="120,194,0,0" TextWrapping="Wrap" Text="{Binding IPDM}" HorizontalContentAlignment="Left" HorizontalAlignment="Left" VerticalAlignment="Top" Width="53"/>
+
+        <TextBlock Text="IPD (Flat):" Margin="10,228,0,0" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox x:Name="LFPD" Height="23" Margin="120,224,0,0" TextWrapping="Wrap" Text="{Binding LFPD}" HorizontalContentAlignment="Left" HorizontalAlignment="Left" VerticalAlignment="Top" Width="53"/>
+        <TextBox x:Name="HFPD" Height="23" Margin="190,224,0,0" TextWrapping="Wrap" Text="{Binding HFPD}" HorizontalContentAlignment="Left" HorizontalAlignment="Left" VerticalAlignment="Top" Width="53"/>
+
+        <Button Content="Calculate" HorizontalAlignment="Left" Margin="168,265,0,0" VerticalAlignment="Top" Width="75" Click="Calculate_Click"/>
+
+        <TextBlock Text="DPS:" Margin="10,298,0,0" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBlock Text="DPS (20% Quality):" Margin="10,318,0,0" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBlock Text="PDPS:" Margin="10,342,0,0" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBlock Text="PDPS (20% Quality):" Margin="10,362,0,0" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="40,298,0,0" TextWrapping="Wrap" Text="{Binding DPSEC,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="115,318,0,0" TextWrapping="Wrap" Text="{Binding DPSECQ,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="45,342,0,0" TextWrapping="Wrap" Text="{Binding PDPSEC,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="120,362,0,0" TextWrapping="Wrap" Text="{Binding PDPSECQ,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" VerticalAlignment="Top"/>
+    </Grid>
+    
+</Window>
